@@ -10,26 +10,26 @@ import { AppealService } from './appeals.service'
 
 const router = Router()
 
-router.post('/appeal', validateCreateAppeal, AppealController.create)
-router.get('/appeal', validateGetAllAppeal, AppealController.getAll)
+router.post('/appeals', validateCreateAppeal, AppealController.create)
+router.get('/appeals', validateGetAllAppeal, AppealController.getAll)
 
 router.patch(
-  '/appeal/:id/set-in-progress',
+  '/appeals/:id/set-in-progress',
   validateChangeStatus,
   AppealController.setInProgress
 )
 router.patch(
-  '/appeal/:id/set-finished',
+  '/appeals/:id/set-finished',
   validateChangeStatus,
   AppealController.setFinished
 )
 router.patch(
-  '/appeal/:id/set-declined',
+  '/appeals/:id/set-declined',
   validateChangeStatus,
   AppealController.setDeclined
 )
 router.patch(
-  '/appeal/decline-all-in-progress',
+  '/appeals/decline-all-in-progress',
   validateAllInProgress,
   AppealController.declineAllInProgress
 )
