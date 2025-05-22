@@ -1,0 +1,23 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db" //SQLite файл будет создан в папке prisma/
+}
+
+model Appeal {
+  id             String    @id @default(uuid())
+  theme          String
+  appeal_text    String
+  processed_text String?
+  status         String?   @default("NEW")
+  createdAt      DateTime? @default(now())
+}
