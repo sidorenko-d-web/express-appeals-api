@@ -26,11 +26,7 @@ export type TypeFindWithRange = {
 
 type TypeRequestWithId = { id: string }
 
-export type TypeCreateAppealRequest = Request<
-  TypeRequestWithId,
-  {},
-  TypeCreateAppeal
->
+export type TypeCreateAppealRequest = Request<{}, {}, TypeCreateAppeal>
 export type TypeFindWithRangeRequest = Request<
   TypeRequestWithId,
   {},
